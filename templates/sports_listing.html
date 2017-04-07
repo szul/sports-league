@@ -1,0 +1,38 @@
+$def with (s)
+
+<form method="get" action="/sports/new/">
+  <input type="submit" value="New" />
+</form>
+<table>
+  <tr>
+    <th>menu</th>
+    <th>id</th>
+    <th>active</th>
+    <th>name</th>
+    <th>datecreated</th>
+    <th>datemodified</th>
+    <th>rowstamp</th>
+  </tr>
+  $for sport in s:
+    <tr>
+      <td>
+        <ul>
+          <li>
+            <a href="/s:$sport.name">select</a>
+          </li>
+          <li>
+            <a href="/sports/edit/$sport.id">edit</a>
+          </li>
+          <li>
+            <a href="/sports/delete/$sport.id">delete</a>
+          </li>
+        </ul>
+      </td>
+      <td>$sport.id</td>
+      <td>$sport.active</td>
+      <td>$sport.name</td>
+      <td>$sport.datecreated</td>
+      <td>$sport.datemodified</td>
+      <td>$sport.rowstamp</td>
+    </tr>
+</table>

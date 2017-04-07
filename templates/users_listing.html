@@ -1,0 +1,48 @@
+$def with (u)
+
+<form method="get" action="/users/new/">
+  <input type="submit" value="New" />
+</form>
+<table>
+  <tr>
+    <th>menu</th>
+    <th>id</th>
+    <th>active</th>
+    <th>firstname</th>
+    <th>lastname</th>
+    <th>username</th>
+    <th>email</th>
+    <th>password</th>
+    <th>salt</th>
+    <th>datecreated</th>
+    <th>datemodified</th>
+    <th>rowstamp</th>
+  </tr>
+  $for user in u:
+    <tr>
+      <td>
+        <ul>
+          <li>
+            <a href="/u:$user.username">select</a>
+          </li>
+          <li>
+            <a href="/users/edit/$user.id">edit</a>
+          </li>
+          <li>
+            <a href="/users/delete/$user.id">delete</a>
+          </li>
+        </ul>
+      </td>
+      <td>$user.id</td>
+      <td>$user.active</td>
+      <td>$user.firstname</td>
+      <td>$user.lastname</td>
+      <td>$user.username</td>
+      <td>$user.email</td>
+      <td>$user.password</td>
+      <td>$user.salt</td>
+      <td>$user.datecreated</td>
+      <td>$user.datemodified</td>
+      <td>$user.rowstamp</td>
+    </tr>
+</table>
